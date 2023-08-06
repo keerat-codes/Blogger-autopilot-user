@@ -9,6 +9,8 @@ require('dotenv').config();
 app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+const topics  = require('./controllers/topics');
+app.use('/controller', topics);
 const blogsRoute = require('./routes/blogs');
 app.use('/blogs', blogsRoute);
 
